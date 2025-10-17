@@ -75,7 +75,15 @@ These characteristics have been selected based on the specific needs and goals o
 ## Top 3 Implicit Characteristics
 
 ## Measuring And Governing Architecture Characteristics
-It benefits architects to understand how to measure and govern architectural characteristics, rather than drown in ambiguous terms and broad definitions.  
+It benefits architects to understand how to measure and govern architectural characteristics, rather than drown in ambiguous terms and broad definitions.
+
+### Fitness Functions
+How tp verify and measure that an architecture characteristic is being met. Fitness functions can be:
+- Automated tests
+- Manual reviews
+- Analysis tools
+- Monitoring tools
+
 ### Examples
 #### Operational Measures
 Many architecture characteristics have obvious direct measurements, such as performance or scalability. Yet even these offer many nuanced interpretations, depending on the team’s goals. For example, perhaps your team measures the average response time for certain requests—a good example of a measure for an operational architecture characteristic.
