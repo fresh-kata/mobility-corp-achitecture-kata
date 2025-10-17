@@ -4,7 +4,7 @@
 2024-06-15
 
 ## Status
-Accepted
+Proposed
 
 ## Context
 Our customers keep complaining that the right vehicles aren’t in the right places!
