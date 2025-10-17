@@ -74,6 +74,23 @@ These characteristics have been selected based on the specific needs and goals o
 
 ## Top 3 Implicit Characteristics
 
+## Measuring And Governing Architecture Characteristics
+It benefits architects to understand how to measure and govern architectural characteristics, rather than drown in ambiguous terms and broad definitions.  
+### Examples
+#### Operational Measures
+Many architecture characteristics have obvious direct measurements, such as performance or scalability. Yet even these offer many nuanced interpretations, depending on the team’s goals. For example, perhaps your team measures the average response time for certain requests—a good example of a measure for an operational architecture characteristic.
+
+## Scope of Architecture Characteristics
+An architecture quantum establishes the scope for a set of architectural characteristics. It features:
+- Independent deployment from other parts of the architecture
+- High functional cohesion
+- Low external implementation static coupling
+- Synchronous communication with other quanta
+
+### Example of Architecture Quantum
+![](images/fsa2_0705.png)
+![](images/fsa2_0706.png)
+
 
 ## Conclusion
 
