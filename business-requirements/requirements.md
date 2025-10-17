@@ -12,7 +12,50 @@ MobilityCorp operates in multiple locations, mostly in city locations but is inc
 and van rental to more suburban locations.
 
 ## Users
-The expected number and/or types of users of the system.
+### 1. Rider / Customer
+
+#### Goal
+Rent a nearby vehicle for short-term travel.
+#### Actions
+Sign up, locate a vehicle, rent, unlock/start, ride, park, end trip, pay.
+#### Devices
+Mobile app, occasionally web portal.
+#### Pain points
+Availability, pricing clarity, battery range, parking zones.
+
+### 2. Fleet Operator / Field Technician
+#### Goal
+Maintain and rebalance vehicles across locations.
+#### Actions
+Check battery/health status, relocate vehicles, perform repairs, charge batteries.
+#### Devices
+Internal mobile or tablet app, admin console.
+#### Pain points
+Route optimization, real-time vehicle data, maintenance scheduling.
+
+### 3. Customer Support / Operations Agent
+#### Goal
+Handle user issues, disputes, payments, or lockouts.
+#### Actions
+Access user & trip records, issue refunds, override sessions, manage incidents.
+#### Pain points
+Fragmented data, need quick visibility into trips and users.
+
+### 4. Mechanic / Service Partner
+#### Goal
+Perform scheduled or ad-hoc maintenance on vehicles.
+#### Actions
+Receive tasks, log work, update vehicle status.
+#### Pain points
+Parts inventory, tracking service logs.
+
+### 5. Business Administrator / Finance
+#### Goal
+Oversee financials, billing, pricing, and performance metrics.
+#### Actions
+Set tariffs, analyze revenue, integrate with accounting.
+#### Pain points
+Reconciliation, dynamic pricing needs.
 
 ## Requirements
 Domain requirements (as expected from domain users and experts).
