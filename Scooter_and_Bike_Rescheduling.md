@@ -11,9 +11,9 @@ To address this, we split the solution into **two phases**:
    - See [ADR-004-nightly-rebalance](ADRs/ADR-004-nightly-rebalance.md).
 
 2. **Daytime Continuous Optimization**  
-   - During the day, vehicles are constantly moving due to customer trips.  
-   - We do not try to fight these natural movements; instead, we predict them and only use trucks where needed.  
-   - This strategy relies on three machine learning models, a **two-network approach** for flows, and a **VRP routing layer** for execution.  
+   - During the day, bikes and scooters are constantly moving due to customer trips.  
+   - We predict those natural relocations and use trucks to relocate scooters and bikes if demand is not naturally satisfied  
+   - This strategy relies on three machine learning models a **demand forecast** a **supply flow network prediction** and
    - See [ADR-005-daytime-optimization](ADRs/ADR-005-daytime-optimization.md).
 
 ---
