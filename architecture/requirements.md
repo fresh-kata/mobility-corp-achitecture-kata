@@ -14,13 +14,13 @@ Operating in urban and suburban areas, MobilityCorp enables customers to sign up
 
 ## Users and Goals
 
-| **User**                  | **Goal**                                   | **Actions**                                 | **Devices**               | **Pain Points**                          |
-|---------------------------|-------------------------------------------|--------------------------------------------|---------------------------|------------------------------------------|
-| **Rider/Customer**        | Rent vehicles for short-term travel       | Sign up, locate, rent, unlock, ride, park, pay | Mobile app, web portal    | Availability, pricing clarity, parking zones |
-| **Fleet Operator**         | Maintain and rebalance vehicles           | Check status, relocate, repair, charge     | Internal apps, admin console | Route optimization, real-time data      |
-| **Customer Support Agent**| Resolve user issues and disputes          | Access records, manage incidents           | Admin console             | Fragmented data, quick visibility needed |
-| **Mechanic/Service Partner**| Perform maintenance                      | Log work, update vehicle status            | Mobile/tablet app         | Parts inventory, service tracking        |
-| **Business Administrator** | Oversee financials and performance       | Set tariffs, analyze metrics               | Dashboards, admin console | Reconciliation, dynamic pricing          |
+| **User**                     | **Goal**                                   | **Actions**                                | **Devices**                  | **Pain Points**                          |
+|------------------------------|--------------------------------------------|--------------------------------------------|------------------------------|------------------------------------------|
+| **Rider/Customer**           | Rent vehicles for short-term travel        | Sign up, locate, rent, unlock, ride, park, pay | Mobile app, web portal   | Availability, pricing clarity, parking zones |
+| **Fleet Operator**           | Maintain and rebalance vehicles            | Check status, relocate, repair, charge     | Internal apps, admin console | Route optimization, real-time data       |
+| **Customer Support Agent**   | Resolve user issues and disputes           | Access records, manage incidents           | Admin console                | Fragmented data, quick visibility needed |
+| **Mechanic/Service Partner** | Perform maintenance                        | Log work, update vehicle status            | Mobile/tablet app            | Parts inventory, service tracking        |
+| **Business Administrator**   | Oversee financials and performance         | Set tariffs, analyze metrics               | Dashboards, admin console    | Reconciliation, dynamic pricing          |
 
 ---
 
