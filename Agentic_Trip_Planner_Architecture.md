@@ -70,22 +70,24 @@ MCP Servers offer a modular approach, allowing the agent to interact with variou
 
 ### Useful MCP Servers for Trip Planning
 
-| MCP Server      | Purpose                                                                |
-| --------------- | ---------------------------------------------------------------------- |
-| Fleet & Booking | Find, book, or cancel vehicles. Check vehicle health and availability. |
-| Telemetry       | Get real-time GPS, battery, and status updates every 30 seconds.       |
-| Parking         | Find nearest legal parking bays, check capacity.                       |
-| Charging        | Monitor charger and battery swap status.                               |
-| Supply          | Get and send supply or relocation requests.                            |
-| Weather         | Retrieve forecasts, rain, temperature, wind.                           |
-| Events          | Check local events and disruptions.                                    |
-| Transit         | Get public transport schedules and delays.                             |
-| Traffic         | See roadworks and traffic restrictions.                                |
-| User Context    | Access user preferences and schedules.                                 |
-| Pricing         | See tariffs, rewards, and incentives.                                  |
-| Compliance      | Check legal city limits, parking rules, and logging.                   |
-| Payments        | Manage user payments and refunds.                                      |
-| Image Proof     | Validate return photos and charger connection.                         |
+| MCP Server       | Purpose                                                                |
+|------------------|------------------------------------------------------------------------|
+| Fleet & Booking  | Find, book, or cancel vehicles. Check vehicle health and availability. |
+| Telemetry        | Get real-time GPS, battery, and status updates every 30 seconds.       |
+| Local Calendar   | Get local calendar of the country                                      |
+| Parking          | Find nearest legal parking bays, check capacity.                       |
+| Charging         | Monitor charger and battery swap status.                               |
+| Supply           | Get and send supply or relocation requests.                            |
+| Weather          | Retrieve forecasts, rain, temperature, wind.                           |
+| Local Events     | Check local events and disruptions.                                    |
+| Public Transport | Get public transport schedules and delays.                             |
+| Traffic          | See roadworks and traffic restrictions.                                |
+| User Context     | Access user preferences and schedules.                                 |
+| Pricing          | See tariffs, rewards, and incentives.                                  |
+| Compliance       | Check legal city limits, parking rules, and logging.                   |
+| Payments         | Manage user payments and refunds.                                      |
+| Vehicles         | Vehicles availability maps                                             |
+| Image Proof      | Validate return photos and charger connection.                         |
 
 ---
 
@@ -162,6 +164,11 @@ It's needed to have a dedicated AI Agent Trip Planning Evaluator that assesses t
 * Generate reports on trip planning performance for stakeholders.
 * Utilize historical trip data to benchmark and validate the effectiveness of new trip plans.
 * Incorporate user feedback to refine evaluation metrics and ensure alignment with user expectations.
+
+## Diagrams
+
+### Component Based Thinking 
+![Trip Planner Component Diagram](assets/Agentic_AI_Trip_Planner_Components.png)
 
 ---
 ## 13. ADRs Referenced
