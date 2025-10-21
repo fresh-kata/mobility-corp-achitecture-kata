@@ -217,8 +217,21 @@ It's needed to have a dedicated AI Agent Trip Planning Evaluator that assesses t
 
 ## Diagrams
 
-### Component Based Thinking 
+### Component Based Thinking
+
 ![Trip Planner Component Diagram](assets/Agentic_AI_Trip_Planner_Components.png)
+
+### Deployment Architecture
+
+There are four main components in the deployment architecture:
+1. **User Devices:** Smartphones or web apps where users interact with the trip planning agent.
+2. **MCP Gateway Servers:** MCP Gateway expose all System Services API as MCP Servers for the Agentic AI to consume.
+3. **Web Server for Agentic AI:** Hosts Chat Assistant, Agentic Trip Planner, and Trip Planning Evaluator.
+4. **On-Premise GPU Cluster:** Dedicated hardware for hosting LLMs and performing inference tasks.
+5. **Database Servers:** Store user data, trip plans, and logs securely.
+6. **System Services API:** Internal APIs (Booking, Supply, etc) and Third-party APIs for weather, traffic, public transport, etc.
+
+![Trip Planner Deployment Architecture](assets/Agentic_AI_Trip_Planner_Deployment.png)
 
 ---
 ## 13. ADRs Referenced
