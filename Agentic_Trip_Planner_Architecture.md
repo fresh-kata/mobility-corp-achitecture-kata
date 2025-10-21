@@ -183,12 +183,12 @@ Although the initial capital expense is significant, the solution provides **lon
 #### Hardware and Cost Breakdown (Estimated, 2025)
 | Component | Quantity | Description | Est. Unit Cost (USD) | Total Cost (USD) |
 |------------|-----------|--------------|----------------------|------------------|
-| **NVIDIA A100 (80GB)** | 4 | Core inference GPUs for Llama 3 (70B) | $20,000 | $80,000 |
-| **RTX 6000 Ada (48GB)** | 2 | Development and testing GPUs | $12,500 | $25,000 |
-| **Compute Nodes (Dual Xeon, 512GB RAM)** | 2 | High-performance servers | $10,000 | $20,000 |
-| **NVMe Storage (20TB RAID)** | 1 | Model weights, embeddings, and cache | $8,000 | $8,000 |
-| **Networking, Cooling, and Power Systems** | – | Cluster infrastructure and redundancy | – | $12,000 |
-| **Total Estimated Cost (One-time Investment)** | – |  |  | **~$145,000 ** |
+| **NVIDIA A100 (80GB)** | 4 | Core inference GPUs for Llama 3 (70B) | $20,000 | $80,000          |
+| **RTX 6000 Ada (48GB)** | 2 | Development and testing GPUs | $12,500 | $25,000          |
+| **Compute Nodes (Dual Xeon, 512GB RAM)** | 2 | High-performance servers | $10,000 | $20,000          |
+| **NVMe Storage (20TB RAID)** | 1 | Model weights, embeddings, and cache | $8,000 | $8,000           |
+| **Networking, Cooling, and Power Systems** | – | Cluster infrastructure and redundancy | – | $12,000          |
+| **Total Estimated Cost (One-time Investment)** | – |  |  | $145,000   |
 
 #### Summary of Benefits
 - **Performance:** Sub-second inference latency for reasoning-intensive workflows.
