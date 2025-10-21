@@ -12,7 +12,7 @@ If there is no vehicle available, it can send request to the supply team to reba
 
 ### Problem Statement
 Users need a reliable way to plan trips using MobilityCorp vehicles. They want to know:
-* What time to leave to arrive on time.
+* When to leave home (the place) to arrive on time.
 * Which vehicle to use (scooter, bike, car).
 * Where to pick up and drop off the vehicle.
 * How much the trip will cost.
@@ -25,6 +25,8 @@ What MobilityCorp needs:
 * Optimize fleet usage and reduce operational costs.
 
 ### Why an Agentic AI
+
+See ADR: [ADR-021: Why do we need Agentic AI?](ADRs/ADR-021-Why_an_Agentic_AI.md)
 
 Planning trips is a complex task, and it needs to consider many dynamic factors:
 * Users have varying preferences (fastest, cheapest, greenest).
