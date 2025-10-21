@@ -60,7 +60,15 @@ Planning trips is a complex task, and it needs to consider many dynamic factors:
 
 ---
 
-## 5. Useful MCP Servers
+## 5. MCP Servers
+
+### Why MCP Servers?
+MCP Servers provide structured APIs to access real-time data and perform actions related to MobilityCorp's services.
+We do not need to build everything from scratch; instead, we leverage these existing API endpoints to gather necessary information and execute tasks.
+By using the right technology it's possible to expose the APIs as MCP Servers, which can be easily integrated with the Agentic AI.
+MCP Servers offer a modular approach, allowing the agent to interact with various services independently, ensuring scalability and maintainability.
+
+### Useful MCP Servers for Trip Planning
 
 | MCP Server      | Purpose                                                                |
 | --------------- | ---------------------------------------------------------------------- |
