@@ -223,7 +223,7 @@ It's needed to have a dedicated AI Agent Trip Planning Evaluator that assesses t
 
 ### Deployment Architecture
 
-There are four main components in the deployment architecture:
+There are 6 main components in the deployment architecture:
 1. **User Devices:** Smartphones or web apps where users interact with the trip planning agent.
 2. **MCP Gateway Servers:** MCP Gateway expose all System Services API as MCP Servers for the Agentic AI to consume.
 3. **Web Server for Agentic AI:** Hosts Chat Assistant, Agentic Trip Planner, and Trip Planning Evaluator.
