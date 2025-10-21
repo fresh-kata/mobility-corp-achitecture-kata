@@ -1,17 +1,16 @@
 # AI-Enabled Use Cases for MobilityCorp
 
-This document outlines five AI-driven use cases designed to improve operations, reliability, and customer experience for MobilityCorp.  
-Each use case includes a short description, its importance, and critical questions focused on AI uncertainty, provider changes, and cost management.
+Based on the business challenges identified for MobilityCorp and summarized in the [Business Challenges Document](business-requirements/business-challenges.md), below are five AI-enabled use cases that can help address these challenges, improve operations, reliability, and customer experience for MobilityCorp. Each use case includes a short description, its importance, and critical questions focused on AI uncertainty, provider changes, and cost management.
 
-1. **Demand Forecasting & Vehicle Placement**: Predicts demand to optimize vehicle availability and placement.
-2. **Battery Health & Technician Scheduling**: Monitors battery health and plans efficient technician routes.
-3. **Dynamic Pricing & Booking Suggestions**: Adjusts pricing dynamically and suggests bookings based on demand.
-4. **Photo Validation for Vehicle Return**: Automates vehicle return checks using AI vision models.
-5. **Personalization & Mobility Assistant**: Provides personalized travel recommendations and smart assistance.
+1. **Demand forecasting & fleet distribution**: Predicts demand to optimize vehicle availability and placement.
+2. **Battery health & technician scheduling**: Monitors battery health and plans efficient technician routes.
+3. **Dynamic pricing & booking suggestions**: Adjusts pricing dynamically and suggests bookings based on demand.
+4. **Photo validation for vehicle return**: Automates vehicle return checks using AI vision models.
+5. **Personalization & mobility assistant**: Provides personalized travel recommendations and smart assistance.
 
 ---
 
-## 1. AI Demand Forecasting & Vehicle Placement
+## 1. AI Demand Forecasting & Fleet Distribution
 
 ### What it does
 Predicts when and where customers will want vehicles (scooters, bikes, cars, vans).  
