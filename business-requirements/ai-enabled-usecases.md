@@ -3,6 +3,12 @@
 This document outlines five AI-driven use cases designed to improve operations, reliability, and customer experience for MobilityCorp.  
 Each use case includes a short description, its importance, and critical questions focused on AI uncertainty, provider changes, and cost management.
 
+1. **Demand Forecasting & Vehicle Placement**: Predicts demand to optimize vehicle availability and placement.
+2. **Battery Health & Technician Scheduling**: Monitors battery health and plans efficient technician routes.
+3. **Dynamic Pricing & Booking Suggestions**: Adjusts pricing dynamically and suggests bookings based on demand.
+4. **Photo Validation for Vehicle Return**: Automates vehicle return checks using AI vision models.
+5. **Personalization & Mobility Assistant**: Provides personalized travel recommendations and smart assistance.
+
 ---
 
 ## 1. AI Demand Forecasting & Vehicle Placement
@@ -64,8 +70,8 @@ Improves revenue, keeps vehicles used evenly, and helps ensure availability.
 ## 4. AI Photo Validation for Vehicle Return
 
 ### What it does
-Uses AI vision models to check that vehicles are properly parked and not damaged when returned.  
-Detects if an eCar/eVan is plugged in correctly, and flags possible issues to human reviewers.
+Uses AI vision models (such as object detection and segmentation) to check that vehicles are properly parked and not damaged when returned; sensor data (e.g., location, battery status) complements image analysis to verify parking and detect issues.  
+Detects if an eCar/eVan is plugged in correctly, notifies the user of immediate actions needed (such as repositioning the vehicle or reconnecting the charger), and flags potential issues to human reviewers.
 
 ### Why it matters
 Reduces manual review work and speeds up trip closing and payments.
