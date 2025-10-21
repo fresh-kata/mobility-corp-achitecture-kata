@@ -155,16 +155,7 @@ It's needed to have a dedicated AI Agent Trip Planning Evaluator that assesses t
 
 ---
 ## 13. ADRs Referenced
-- [ADR-001: Architecture Type — Agentic AI over Static Rules](ADRs/ADR-013.md)
-- [ADR-002: MCP Protocol Standardization](ADRs/ADR-014.md)
-- [ADR-003: Multimodal Planning Engine](ADRs/ADR-015.md)
-- [ADR-004: Demand Forecasting Granularity](ADRs/ADR-016.md)
-- [ADR-005: Phased Autonomy Levels](ADRs/ADR-017.md)
-- [ADR-006: Privacy and GDPR Compliance](ADRs/ADR-018.md)
-- [ADR-007: Backup Plans and Risk Scoring](ADRs/ADR-019.md)
-- [ADR-008: Event-Driven Data Flow](ADRs/ADR-020.md)
-- [ADR-009: Explainability and Logging](ADRs/ADR-021.md)
-- [ADR-010: Human Oversight & Fallbacks](ADRs/ADR-022.md)
+
 
 
 
