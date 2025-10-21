@@ -1,12 +1,12 @@
 # Need for agentic AI
 
-Agentic AI is essential for addressing the complexities of trip planning and fleet management. It enables dynamic adaptation to changing conditions, learns user preferences, and makes real-time decisions. By leveraging data from various sources, it ensures efficient, personalized, and compliant solutions, overcoming the limitations of static algorithms and rule-based systems.
+**Author**: Marlon Ehrich<br />
+**Status**: ACCEPTED<br />
+**Type**: DESIGN<br />
+**Created**: 2025-10-19<br />
+**Post-history**:  
 
-Author: Marlon Ehrich 
-Status: ACCEPTED  
-Type: DESIGN  
-Created: 2025-10-19  
-Post-history:  
+Agentic AI is essential for addressing the complexities of trip planning and fleet management, enabling dynamic adaptation to changing conditions, learning user preferences, and making real-time decisions.
 
 # CONTEXT
 

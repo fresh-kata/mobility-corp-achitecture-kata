@@ -1,12 +1,12 @@
 # Smart Allocation of Vehicles
 
-Short description of the architecture decision
+**Author**: Bahram Jahanshahi<br />
+**Status**: PROPOSED<br />
+**Type**: PROCESS<br />
+**Created**: 2024-06-15<br />
+**Post-history**:
 
-Author: Bahram Jahanshahi  
-Status: PROPOSED  
-Type: PROCESS  
-Created: 2024-06-15  
-Post-history:  
+Short description of the architecture decision
 
 # CONTEXT
 

@@ -1,13 +1,12 @@
 # Database design for usage prediction model inference
 
-Database design to support efficient and scalable inference for usage prediction models in the mobility platform.
-
-**Author**: Sebastian Krieger  
-**Status**: DRAFT  
-**Type**: DESIGN  
-**Created**: 2025-10-21  
+**Author**: Sebastian Krieger<br />
+**Status**: DRAFT<br />
+**Type**: DESIGN<br />
+**Created**: 2025-10-21<br />
 **Post-history**:  
 
+Database design to support efficient and scalable inference for usage prediction models in the mobility platform.
 
 # CONTEXT
 

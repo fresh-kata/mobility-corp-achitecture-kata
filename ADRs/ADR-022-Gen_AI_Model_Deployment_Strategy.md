@@ -1,12 +1,12 @@
 # Generative AI Model Deployment Strategy
 
-Short description of the architecture decision
+**Author**: Bahram Jahanshahi<br />
+**Status**: PROPOSED<br />
+**Type**: INFRASTRUCTURE<br />
+**Created**: 2023-10-05<br />
+**Post-history**:  
 
-Author: Bahram Jahanshahi 
-Status: PROPOSED  
-Type: INFRASTRUCTURE  
-Created: 2023-10-05  
-Post-history:  
+Selection of a centralized hosting strategy for deploying Generative AI models at MobilityCorp, prioritizing data privacy, maintainability, and compliance, while accepting manageable latency due to predictable request loads.
 
 # CONTEXT
 

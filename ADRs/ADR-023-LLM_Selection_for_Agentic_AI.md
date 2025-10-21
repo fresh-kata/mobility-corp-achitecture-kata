@@ -1,12 +1,12 @@
 # Selection of Open-Source Agentic LLM for Trip Planning AI
 
-Selection of an open-source large language model (LLM) to power an agentic AI trip planning system capable of advanced reasoning, multi-step strategy formulation, and direct tool-calling via MCP clients for travel APIs.
-
-**Author**: Bahram Jahanshahi
-**Status**: PROPOSED  
-**Type**: TECHNOLOGY  
-**Created**: 2025-10-21  
+**Author**: Bahram Jahanshahi<br />
+**Status**: PROPOSED<br />
+**Type**: TECHNOLOGY<br />
+**Created**: 2025-10-21<br />
 **Post-history**:
+
+Selection of an open-source large language model (LLM) to power an agentic AI trip planning system capable of advanced reasoning, multi-step strategy formulation, and direct tool-calling via MCP clients for travel APIs.
 
 # CONTEXT
 

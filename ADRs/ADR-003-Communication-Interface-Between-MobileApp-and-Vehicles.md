@@ -1,12 +1,12 @@
 # Communication Interface Between Mobile App and Vehicles
 
-Short description of the architecture decision.
+**Author**: Bahram Jahanshahi<br />
+**Status**: DRAFT<br />
+**Type**: INTEGRATION<br />
+**Created**: 2025-10-18<br />
+**Post-history**: 
 
-Author: Bahram Jahanshahi 
-Status: DRAFT  
-Type: INTEGRATION  
-Created: 2025-10-18
-Post-history: 
+A RESTful API over HTTPS is chosen as the communication interface between the mobile app and vehicles to ensure secure, scalable, and maintainable integration.
 
 # CONTEXT
 

@@ -1,10 +1,12 @@
 # Demand Forecast per Zone Using ARIMAX with External Factors
 
-Author: Marlon Ehrich
-Status: PROPOSED  
-Type: DESIGN  
-Created: 2025-10-19  
-Post-history:  
+**Author**: Marlon Ehrich<br />
+**Status**: PROPOSED<br />
+**Type**: DESIGN<br />
+**Created**: 2025-10-19<br />
+**Post-history**:  
+
+Use an ARIMAX model to generate short-term, per-zone demand forecasts in 15-minute intervals, leveraging both historical booking data and external factors such as weather and holidays.
 
 # CONTEXT
 

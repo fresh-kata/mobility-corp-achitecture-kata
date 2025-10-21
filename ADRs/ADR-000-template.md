@@ -1,13 +1,12 @@
 # [Title of the architecture decision]
 
-[Short description of the architecture decision]
-
-**Author**: [Jane Doe]
-**Status**: [DRAFT | PROPOSED | ACCEPTED | SUPERCEDED | DEPRECATED | REJECTED]
-**Type**: [DESIGN | TECHNOLOGY | PROCESS | INFRASTRUCTURE | POLICY | SECURITY | PERFORMANCE | INTEGRATION | DEPRECATION | COMPLIANCE | OTHER]
-**Created**: [YYYY-MM-DD]
+**Author**: [Jane Doe]<br />
+**Status**: [DRAFT | PROPOSED | ACCEPTED | SUPERCEDED | DEPRECATED | REJECTED]<br />
+**Type**: [DESIGN | TECHNOLOGY | PROCESS | INFRASTRUCTURE | POLICY | SECURITY | PERFORMANCE | INTEGRATION | DEPRECATION | COMPLIANCE | OTHER]<br />
+**Created**: [YYYY-MM-DD]<br />
 **Post-history**: [YYYY-MM-DD, YYYY-MM-DD]
 
+[Short description of the architecture decision]
 
 # CONTEXT
 

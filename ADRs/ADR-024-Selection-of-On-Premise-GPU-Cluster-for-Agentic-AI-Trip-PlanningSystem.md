@@ -1,12 +1,12 @@
 # Selection of On-Premise GPU Cluster for Agentic AI Trip Planning System
 
-Decision to deploy and operate the **Llama 3 (70B)** model for the Agentic AI Trip Planning System using a dedicated **on-premise GPU cluster** to ensure cost efficiency, data control, and sustained high-performance inference for agentic reasoning and MCP-based tool-calling.
-
-**Author**: Bahram Jahanshahi
-**Status**: PROPOSED  
-**Type**: INFRASTRUCTURE  
-**Created**: 2025-10-21  
+**Author**: Bahram Jahanshahi<br />
+**Status**: PROPOSED<br />
+**Type**: INFRASTRUCTURE<br />
+**Created**: 2025-10-21<br />
 **Post-history**:  
+
+Decision to deploy and operate the **Llama 3 (70B)** model for the Agentic AI Trip Planning System using a dedicated **on-premise GPU cluster** to ensure cost efficiency, data control, and sustained high-performance inference for agentic reasoning and MCP-based tool-calling.
 
 # CONTEXT
 

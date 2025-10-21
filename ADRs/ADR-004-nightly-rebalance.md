@@ -1,12 +1,12 @@
 # Nightly Rebalance
 
-Short description of the architecture decision
+**Author**: Marlon Ehrich<br />
+**Status**: PROPOSED<br />
+**Type**: PROCESS<br />
+**Created**: 2025-10-19<br />
+**Post-history**:  
 
-Author: Marlon Ehrich
-Status: PROPOSED  
-Type: PROCESS  
-Created: 2025-10-19
-Post-history:  
+Nightly vehicle relocation process to ensure optimal scooter and bike availability for the morning commuter peak by leveraging demand and supply-shift forecasts.
 
 # CONTEXT
 
