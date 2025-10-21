@@ -1,16 +1,34 @@
-# TITLE
-Short description of the architecture decision
+# [Title of the architecture decision]
 
-# STATUS
-Proposed | Accepted | Deprecated | Superseded
+[Short description of the architecture decision]
+
+**Author**: [Jane Doe]
+**Status**: [DRAFT | PROPOSED | ACCEPTED | SUPERCEDED | DEPRECATED | REJECTED]
+**Type**: [DESIGN | TECHNOLOGY | PROCESS | INFRASTRUCTURE | POLICY | SECURITY | PERFORMANCE | INTEGRATION | DEPRECATION | COMPLIANCE | OTHER]
+**Created**: [YYYY-MM-DD]
+**Post-history**: [YYYY-MM-DD, YYYY-MM-DD]
+
+
 # CONTEXT
-What is forcing this decision? What are the drivers?
+
+[Provide background infromation and context for the decision. What is forcing this decision? What are the drivers?]
+
+
 # DECISION
-Describe the chosen option and its pros and cons.
+
+[Clearly describe the chosen option and its pros and cons. Explain using this template: In the context of <use case/user story>, facing <concern>, we decided for <option> and neglected <other options>, to achieve <system qualities/desired consequences>, accepting <downside/undesired consequences>, because <additional rationale>.]
+
+
 # CONSEQUENCES
-What is the impact of this decision? What are the trade-offs?
+
+[Mention the impact and trade-offs of this decion. What is the impact of this decision? What are the trade-offs?
+
+
 # COMPLIANCE
-How will I ensure compliance with this decision?
+
+[Include compiance related issues (e.g. GDPR, DORA) with this decision.]
+
 
 # COMMENTS
-Any comments or references.
+
+[Any additional supporting information such as comments, references or alternatives considered.]

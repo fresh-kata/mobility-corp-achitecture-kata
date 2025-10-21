@@ -1,42 +1,40 @@
+# Demand Forecast per Zone Using ARIMAX with External Factors
 
-# TITLE
-
-Demand Forecast per Zone Using ARIMAX with External Factors
-
-# STATUS
-
-Proposed
+Author: Marlon Ehrich
+Status: PROPOSED  
+Type: DESIGN  
+Created: 2025-10-19  
+Post-history:  
 
 # CONTEXT
 
 To plan both nightly rebalancing and daytime relocations, we need reliable short-term demand forecasts at a fine-grained resolution.
 
-* Demand is influenced not only by historical booking patterns but also by external factors such as weather, holidays, and local events.
-* Our in-house booking system contains the historical attempted bookings (including failed unlocks), which provide the best signal for true demand.
-* A simple but interpretable model is sufficient at this stage; we need stability and explainability more than cutting-edge complexity.
+* Demand is influenced by historical booking patterns and external factors such as weather, holidays, and local events.
+* Our in-house booking system contains historical attempted bookings (including failed unlocks), which provide the best signal for true demand.
+* A simple but interpretable model is sufficient at this stage; we prioritize stability and explainability over cutting-edge complexity.
 
 # DECISION
 
-We will implement a **per-zone ARIMAX forecast** to predict demand in 15-minute intervals.
+In the context of planning rebalancing and relocation operations, facing the need for reliable short-term demand forecasts, we decided to implement a **per-zone ARIMAX forecast** to predict demand in 15-minute intervals. This approach was chosen to achieve interpretability, operational stability, and ease of integration with external data, accepting limited ability to capture complex spatiotemporal correlations, because it aligns with our current operational maturity and data availability.
 
-* **Inputs:**
+**Inputs:**
 
-  * Historical attempted bookings from our booking system (main demand signal).
-  * Exogenous features: weather conditions and forecasts, holidays, events.
-* **Method:** ARIMAX (AutoRegressive Integrated Moving Average with Exogenous regressors).
-* **Granularity:** Forecast demand for each node (zone) in **15-minute buckets**.
-* **Horizon:** Up to several hours ahead (e.g., 6 hours), refreshed in a rolling fashion.
+* Historical attempted bookings from our booking system (main demand signal).
+* Exogenous features: weather conditions and forecasts, holidays, events.
 
-![Demand Forecast Model](../architecture/images/demand_forecast.png)  
+**Method:** ARIMAX (AutoRegressive Integrated Moving Average with Exogenous regressors).  
+**Granularity:** Forecast demand for each node (zone) in **15-minute buckets**.  
+**Horizon:** Up to several hours ahead (e.g., 6 hours), refreshed in a rolling fashion.
 
-**Pros**
+**Pros:**
 
 * Simple, transparent, and interpretable.
 * Easy to incorporate exogenous data like weather and holidays.
 * Efficient to train and serve for many zones simultaneously.
 * Provides granular per-zone, per-interval demand values.
 
-**Cons**
+**Cons:**
 
 * Limited ability to capture complex spatiotemporal correlations across zones.
 * Forecast accuracy depends heavily on quality and coverage of exogenous data.
