@@ -6,6 +6,7 @@ The goal is to design an **Agentic AI** that helps MobilityCorp users plan their
 This agent plans travel for users based on their schedule, available vehicles, and other useful data sources.  
 It ensures that the right vehicle is in the right place at the right time and sends demand signals to suppliers.
 If there is no vehicle available, it can send request to the supply team to rebalance vehicles proactively.
+
 ---
 
 ## 2. Why We Need an Agentic AI
