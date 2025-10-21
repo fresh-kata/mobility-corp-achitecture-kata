@@ -134,19 +134,68 @@ Provide: Main and backup plans, each with ETA, cost, and risk score.
 * **Compliance Rate:** Percentage of trips adhering to local regulations (target 100%).
 * **System Uptime:** Availability of the Agentic Trip Planner service (target >99.9%).
 
-## 10. AI Models Deployment Considerations
-There are several AI model deployment options:
-1. **Centralized Model Hosting:** Host the AI models on MobilityCorp servers. This allows for better control over data privacy and security, as well as easier updates and maintenance. However, it may introduce latency in responses due to network communication.
-2. **Edge Model Deployment:** Deploy AI models on user devices (e.g., smartphones). This reduces latency and allows for offline functionality, but raises challenges in ensuring data privacy, model updates, and consistency across different devices.
-3. **Third-Party AI Services:** Utilize third-party AI platforms (e.g., OpenAI, Google AI) to handle the AI processing. This can leverage advanced capabilities and reduce development time, but may involve data sharing with external entities and potential compliance issues.
-4. **Hybrid Approach:** Combine centralized hosting for sensitive data processing with edge deployment for real-time interactions. This balances performance and privacy but increases system complexity.
+## 10. Generative AI Models (LLM) Deployment 
+
+### Deployment Strategy
+see ADR: [ADR-022: AI Model Deployment Strategy](ADRs/ADR-022-Gen_AI_Model_Deployment_Strategy.md)
 
 * As this AI Agent does not need a big LLM and mainly focuses on planning and decision-making, a **Centralized Model Hosting** approach is recommended to ensure data security and ease of management.
 * Self-hosting the AI models on MobilityCorp servers will provide better control over user data and compliance with privacy regulations.
+* As the number of requests for planning is predictable and limited, the latency introduced by centralized hosting is manageable.
 
-### Consequences
-* Centralized hosting may introduce some latency but ensures data privacy.
-* Edge deployment could improve responsiveness but complicates data management.
+### LLM Selection
+see ADR: [ADR-023: LLM Selection for Agentic AI](ADRs/ADR-023-LLM_Selection_for_Agentic_AI.md)
+
+#### Context
+The team evaluated several open-source large language models (Llama 3 70B, Mixtral 8x22B, Gemma 2 27B, and DeepSeek V2) 
+to power an agentic AI trip-planning system capable of multi-step reasoning, tool-calling, 
+and integration with Model Context Protocol (MCP) clients. 
+The goal was to identify an LLM that provides advanced reasoning for itinerary generation and decision-making, 
+while supporting structured tool interactions for external APIs such as flights, hotels, and maps. 
+Key selection drivers included reasoning depth, tool interoperability, scalability, and an open license suitable for commercial use.
+
+#### Decision
+After evaluation, Llama 3 (70B) was selected as the preferred model for its exceptional reasoning capabilities, 
+robust ecosystem, and compatibility with MCP and RAG architectures. 
+Its ability to generate structured, reliable tool-calling outputs makes it ideal for orchestrating multi-step 
+planning workflows and integrating with travel data sources. 
+Although it requires substantial computational resources, 
+its performance and open licensing provide a strong foundation for developing a scalable, 
+autonomous trip-planning agent that can reason, plan, and act across complex travel scenarios.
+
+### Hardware Requirements and Costs
+See ADR: [ADR-024: Selection of On-Premise GPU Cluster for Agentic AI Trip Planning System](ADRs/ADR-024-Selection-of-On-Premise-GPU-Cluster-for-Agentic-AI-Trip-PlanningSystem.md)
+
+#### Context
+The **Agentic AI Trip Planning System** demands sustained, high-performance computing to operate the **Llama 3 (70B)** model, which performs advanced reasoning, strategic decision-making, and MCP-based tool-calling across multiple APIs.  
+While cloud GPU services offer flexibility and scalability, their continuous costs (up to **$40–$50 per GPU-hour**) make them impractical for 24/7 reasoning workloads. Additionally, they introduce concerns around **data control and GDPR compliance**, which are critical when handling user preferences and travel data.
+
+To ensure **predictable performance, cost efficiency, and data sovereignty**, the team evaluated several infrastructure strategies — cloud-based GPUs, hybrid setups, and fully on-premise clusters. The objective was to find a configuration that delivers **consistent inference performance** for large-scale LLM workloads while keeping the **total cost of ownership (TCO)** manageable over several years.
+
+#### Decision
+After analyzing hardware, scalability, and compliance trade-offs, the team chose to deploy the **Llama 3 (70B)** model on a **dedicated on-premise GPU cluster**.  
+This cluster combines **NVIDIA A100 (80GB)** GPUs for high-performance inference with **RTX 6000 Ada (48GB)** GPUs for development, testing, and smaller models. The system is optimized with **vLLM** and **TensorRT-LLM** to enable quantization, batching, and accelerated inference throughput.
+
+The on-premise cluster ensures **low-latency**, **high-throughput** inference while maintaining **full control over data processing** and infrastructure tuning.  
+Although the initial capital expense is significant, the solution provides **long-term cost savings**, **enhanced data privacy**, and **operational autonomy**, forming a stable and secure foundation for **agentic AI reasoning** and **multi-step planning workflows**.
+
+#### Hardware and Cost Breakdown (Estimated, 2025)
+| Component | Quantity | Description | Est. Unit Cost (USD) | Total Cost (USD) |
+|------------|-----------|--------------|----------------------|------------------|
+| **NVIDIA A100 (80GB)** | 4 | Core inference GPUs for Llama 3 (70B) | $20,000 | $80,000 |
+| **RTX 6000 Ada (48GB)** | 2 | Development and testing GPUs | $12,500 | $25,000 |
+| **Compute Nodes (Dual Xeon, 512GB RAM)** | 2 | High-performance servers | $10,000 | $20,000 |
+| **NVMe Storage (20TB RAID)** | 1 | Model weights, embeddings, and cache | $8,000 | $8,000 |
+| **Networking, Cooling, and Power Systems** | – | Cluster infrastructure and redundancy | – | $12,000 |
+| **Total Estimated Cost (One-time Investment)** | – |  |  | **~$145,000 ** |
+
+#### Summary of Benefits
+- **Performance:** Sub-second inference latency for reasoning-intensive workflows.
+- **Cost Efficiency:** Break-even within **14–16 months** versus continuous cloud GPU rental.
+- **Compliance:** Fully controlled data environment aligned with **GDPR** and internal privacy standards.
+- **Scalability:** Modular design allows easy addition of GPUs and storage for future models (e.g., Llama 4, Mistral MoE).
+- **Autonomy:** Enables in-house experimentation, fine-tuning, and continuous agentic model improvements.
+
 
 
 ## 11. Planning Evaluation Strategy
