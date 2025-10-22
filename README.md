@@ -124,7 +124,7 @@ The fleet is currently **fixed per country**, but the company has plans to scale
 - **Photo validation for vehicle return**: Automates vehicle return checks using AI vision models.
 - **Personalization & mobility assistant**: Provides personalized travel recommendations and smart assistance.
 
-Details on each opportunity can be found in [AI-Enabled Use Cases for MobilityCorp](business-requirements/ai-enabled-usecases.md).
+Details on each opportunity can be found in [AI-Enabled Use Cases for MobilityCorp](business/ai-enabled-usecases.md).
 
 
 ## Challenges
