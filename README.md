@@ -70,7 +70,6 @@ More details on the business model can be found in [MobilityCorp Business Model]
 - **Personalization & mobility assistant**: Provides personalized travel recommendations and smart assistance.
 
 Details on each opportunity can be found in [AI-Enabled Use Cases for MobilityCorp](business-requirements/ai-enabled-usecases.md).
-=======
 # FreshKata - Mobility Corp Architecture Kata
 
 ## Table of Contents
