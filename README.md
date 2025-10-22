@@ -89,21 +89,6 @@ Details on each opportunity can be found in [AI-Enabled Use Cases for MobilityCo
 
 - [Solution](#solution)
 
-
-
-## Team
-
-- [**Bahram**](https://www.linkedin.com/) , title
-
-- [**Marlon**](https://www.linkedin.com/) , Workstudy BI
-
-- [**Sebastian**](https://www.linkedin.com/) , title
-
-- [**Camillo**](https://www.linkedin.com/) , title
-
-- [**Supreet**](https://www.linkedin.com/) , title
-
-
 ## Glossary
 
 TODO add Glossary.
