@@ -1,22 +1,24 @@
-# ADR-022: Selection of Open-Source Agentic LLM for Trip Planning AI
+# Selection of Open-Source Agentic LLM for Trip Planning AI
 
-Selection of an open-source large language model (LLM) to power an **agentic AI trip planning system** capable of advanced reasoning, multi-step strategy formulation, and direct **tool-calling via MCP clients** for travel APIs (flights, hotels, maps, weather, etc.).
+**Author**: Bahram Jahanshahi<br />
+**Status**: PROPOSED<br />
+**Type**: TECHNOLOGY<br />
+**Created**: 2025-10-21<br />
+**Post-history**:
 
-# STATUS
-Proposed
+Selection of an open-source large language model (LLM) to power an agentic AI trip planning system capable of advanced reasoning, multi-step strategy formulation, and direct tool-calling via MCP clients for travel APIs.
 
 # CONTEXT
-We are developing an **Agentic Trip Planning AI** that must autonomously reason, plan, and execute multi-step workflows.  
-The system will integrate with external tools (e.g., travel APIs, maps, booking engines) through **Model Context Protocol (MCP)** and **tool-calling capabilities**.  
-The model must support long-context reasoning, multi-turn dialogue, and accurate tool invocation.
+
+We are developing an **Agentic Trip Planning AI** that must autonomously reason, plan, and execute multi-step workflows. The system will integrate with external tools (e.g., travel APIs, maps, booking engines) through **Model Context Protocol (MCP)** and **tool-calling capabilities**.  
 
 **Drivers:**
-- Need for **strategic multi-step reasoning** for itinerary generation and personalization
-- **Tool-calling support** (JSON/structured outputs) for API integrations
-- **Compatibility with MCP client architecture** for dynamic agent control
-- High **context length** for managing multi-API state and user preferences
-- **Open or commercially safe license**
-- **Scalable model size (70B+)** acceptable for reasoning-heavy workflows
+- Need for **strategic multi-step reasoning** for itinerary generation and personalization.
+- **Tool-calling support** (JSON/structured outputs) for API integrations.
+- **Compatibility with MCP client architecture** for dynamic agent control.
+- High **context length** for managing multi-API state and user preferences.
+- **Open or commercially safe license**.
+- **Scalable model size (70B+)** acceptable for reasoning-heavy workflows.
 
 Evaluated models:
 - **Llama 3 (70B, Meta)**
