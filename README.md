@@ -176,6 +176,11 @@ How might we **adopt Generative AI and predictive ML** to:
 
 In this section, we outline the proposed architecture and solutions to address the challenges faced by MobilityCorp.
 
+We provided two AI-Enabled use cases as solutions to the challenges identified earlier.  
+
+1. [Scooter and Bike Rescheduling](#scooter-and-bike-rescheduling)
+2. [MobilityCorp — Agentic Trip Planner Architecture](#mobilitycorp--agentic-trip-planner-architecture)
+
 ## Scooter and Bike Rescheduling
 This section describes an **ML-driven approach to optimally reroute and reschedule scooters and bikes** so that vehicles are available where and when customers need them. The solution combines **demand forecasting, supply flow prediction, and optimization models** to guide both nightly bulk rebalancing and continuous daytime adjustments.  
 
