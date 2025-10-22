@@ -309,7 +309,7 @@ What MobilityCorp needs:
 
 #### Why an Agentic AI
 
-See ADR: [ADR-021: Why do we need Agentic AI?](ADRs/ADR-021-Why_an_Agentic_AI.md)
+See ADR: [ADR-021: Why do we need Agentic AI?](ADRs/ADR-021-need-for-agentic-ai.md)
 
 Planning trips is a complex task, and it needs to consider many dynamic factors:
 * Users have varying preferences (fastest, cheapest, greenest).
