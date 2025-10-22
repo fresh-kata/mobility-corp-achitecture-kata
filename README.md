@@ -74,7 +74,7 @@ Come up with a new architecture for MobilityCorp, incorporating AI functionality
 ## Context
 
 MobilityCorp operates a flexible, location-based rental service for electric scooters, eBikes, cars, and vans. The business model centers on convenient, app-driven bookings, real-time vehicle tracking, and efficient fleet management.
-More details on the business model can be found in [MobilityCorp Business Model](business-requirements/business-model.md).
+More details on the business model can be found in [MobilityCorp Business Model](business/business-model.md).
 
 Vehicles are tracked, unlocked, and managed via a **mobile app** (with occasional web portal access). All vehicles are GPS-enabled, remotely controllable, and integrated into MobilityCorp’s operational system.
 
