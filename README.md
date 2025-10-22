@@ -1,35 +1,91 @@
-# MobilityCorp Architectural Kata
+# FreshKata - Mobility Corp Architecture Kata
 
-MobilityCorp provide short-term rental for last-mile transport!
-* Electric scooters
-* eBikes
-* Electric cars and vans
+## Table of Contents
+- [Glossary](#glossary)
+- [Objectives](#objectives)
+- [Team members](#team-members)
+- [Context](#context)
+    - [Booking Process](#booking-process)
+    - [Vehicle Management](#vehicle-management)
+    - [Return & Feedback](#return--feedback)
+    - [Fleet Operations](#fleet-operations)
+- [AI-Enabled Opportunities](#ai-enabled-opportunities)
+- [Challenges](#challenges)
+    - [1. Vehicle Availability & Demand Forecasting](#1-vehicle-availability--demand-forecasting)
+    - [2. Battery & Charging Management](#2-battery--charging-management)
+    - [3. Increasing Customer Engagement](#3-increasing-customer-engagement)
+- [Key Objective](#key-objective)
+- [Business Constraints](#business-constraints)
+- [Solutions](#solutions)
+    - [Scooter and Bike Rescheduling](#scooter-and-bike-rescheduling)
+        - [The Two-Network Approach](#the-two-network-approach)
+            - [1. Supply Flow Network (Prediction Layer)](#1-supply-flow-network-prediction-layer)
+            - [2. Residual Network (Flow Optimization Layer)](#2-residual-network-flow-optimization-layer)
+            - [3. VRP Routing Layer (Execution Layer)](#3-vrp-routing-layer-execution-layer)
+        - [Execution Loop](#execution-loop)
+        - [Architecture Diagrams](#architecture-diagrams)
+- [MobilityCorp — Agentic Trip Planner Architecture](#mobilitycorp--agentic-trip-planner-architecture)
+    - [1. Goal](#1-goal)
+    - [2. Why We Need an Agentic AI](#2-why-we-need-an-agentic-ai)
+        - [Problem Statement](#problem-statement)
+        - [Why an Agentic AI](#why-an-agentic-ai)
+    - [3. What the Agent Does](#3-what-the-agent-does)
+    - [4. Example Workflow](#4-example-workflow)
+    - [5. MCP Servers](#5-mcp-servers)
+        - [Why MCP Servers?](#why-mcp-servers)
+        - [Useful MCP Servers for Trip Planning](#useful-mcp-servers-for-trip-planning)
+    - [6. Key Components](#6-key-components)
+    - [7. Data and Privacy](#7-data-and-privacy)
+    - [8. Example MCP Context (Prompt)](#8-example-mcp-context-prompt)
+    - [9. Evaluation Metrics](#9-evaluation-metrics)
+    - [10. Generative AI Models (LLM) Deployment](#10-generative-ai-models-llm-deployment)
+        - [Deployment Strategy](#deployment-strategy)
+        - [LLM Selection](#llm-selection)
+            - [Context](#context-1)
+            - [Decision](#decision)
+        - [Hardware Requirements and Costs](#hardware-requirements-and-costs)
+            - [Context](#context-2)
+            - [Decision](#decision-1)
+            - [Hardware and Cost Breakdown (Estimated, 2025)](#hardware-and-cost-breakdown-estimated-2025)
+            - [Summary of Benefits](#summary-of-benefits)
+    - [11. Planning Evaluation Strategy](#11-planning-evaluation-strategy)
+    - [12. AI Agent Trip Planning Evaluator](#12-ai-agent-trip-planning-evaluator)
+    - [Diagrams](#diagrams)
+        - [Component Based Thinking](#component-based-thinking)
+        - [Deployment Architecture](#deployment-architecture)
+- [Final Thoughts](#final-thoughts)
 
-Our customers sign up and can rent available vehicles MobilityCorp operates in multiple locations, mostly in city locations but is increasingly offering its car and van rental to more suburban locations
 
-This is part of O'Reilly Architectural Katas Q4 2025: AI-Enabled Architecture
+## Glossary
 
+A glossary of key terms and concepts used throughout the MobilityCorp Architecture Kata can be found in [Glossary](GLOSSARY.md).
 
-### Objectives
+## Objectives
 
 Come up with a new architecture for MobilityCorp, incorporating AI functionality where appropriate.
 
-
 ## Team members
-
 * [Bahram Jahanshahi](https://www.linkedin.com/in/bahram-jahanshahi/)
 * [Marlon Ehrich](https://www.linkedin.com/in/marlon-orlin-ehrich-0b5718247/)
 * [Sebastian Krieger](https://www.linkedin.com/in/regeirknaitsabes/)
 * [Camilo Gaviria](https://www.linkedin.com/in/juan-camilo-gaviria-holgu%C3%ADn-15a90461/)
 * [Supreet Singh](https://www.linkedin.com/in/supreetsingh87/)
 
-
 ## Context
 
 MobilityCorp operates a flexible, location-based rental service for electric scooters, eBikes, cars, and vans. The business model centers on convenient, app-driven bookings, real-time vehicle tracking, and efficient fleet management.
-
 More details on the business model can be found in [MobilityCorp Business Model](business-requirements/business-model.md).
 
+Vehicles are tracked, unlocked, and managed via a **mobile app** (with occasional web portal access). All vehicles are GPS-enabled, remotely controllable, and integrated into MobilityCorp’s operational system.
+
+The company’s **business model** is based on:
+
+* **Per-minute rental fees** (applied across all vehicle types)
+* **Advance bookings** (Cars/Vans: up to 7 days; Bikes/Scooters: up to 30 minutes)
+* **Late return and incorrect parking fines**
+* **Incentives** (discounts or reward points) for returning vehicles to strategic parking spots.
+
+The fleet is currently **fixed per country**, but the company has plans to scale up as demand grows. The primary short-term goal is to **maximize utilization of the existing vehicles** before expanding.
 
 ### Booking Process
 
@@ -39,7 +95,6 @@ More details on the business model can be found in [MobilityCorp Business Model]
 - **Bikes & Scooters:**  
     - Bookable up to 30 minutes in advance  
     - Open-ended rentals (up to 12 hours)
-
 
 ### Vehicle Management
 
@@ -70,56 +125,10 @@ More details on the business model can be found in [MobilityCorp Business Model]
 - **Personalization & mobility assistant**: Provides personalized travel recommendations and smart assistance.
 
 Details on each opportunity can be found in [AI-Enabled Use Cases for MobilityCorp](business-requirements/ai-enabled-usecases.md).
-# FreshKata - Mobility Corp Architecture Kata
 
-## Table of Contents
 
-- [FreshKata - Mobility Corp Architecture Kata](#freshkata---mobility-corp-architecture-kata)
-
-  - [Table of Contents](#table-of-contents)
-  - [Team](#team)
-  - [Glossary](#glossary)
-
-- [Problem definition](#problem-definition)
-
-  - [Context](#context)
-  - [Challenges](#challenges)
-  - [Key Objective](#key-objective)
-  - [Business Constraints](#business-constraints)
-
-- [Solution](#solution)
-
-## Glossary
-
-TODO add Glossary.
-
-# Problem definition
-
-# Context
-
-**MobilityCorp** is a short-term rental company specializing in last-mile transport solutions.
-The company operates in multiple countries across Europe, with fleets deployed in **urban centers** and, increasingly, in **suburban areas**.
-
-Each country’s fleet consists of:
-
-* **5,000 Electric Scooters (eScooter)**
-* **5,000 Electric Bikes (eBike)**
-* **200 Electric Cars (eCar)**
-* **200 Electric Vans (eVan)**
-
-Vehicles are tracked, unlocked, and managed via a **mobile app** (with occasional web portal access). All vehicles are GPS-enabled, remotely controllable, and integrated into MobilityCorp’s operational system.
-
-The company’s **business model** is based on:
-
-* **Per-minute rental fees** (applied across all vehicle types)
-* **Advance bookings** (Cars/Vans: up to 7 days; Bikes/Scooters: up to 30 minutes)
-* **Late return and incorrect parking fines**
-* **Incentives** (discounts or reward points) for returning vehicles to strategic parking spots.
-
-The fleet is currently **fixed per country**, but the company has plans to scale up as demand grows. The primary short-term goal is to **maximize utilization of the existing vehicles** before expanding.
-
-# Challenges
-Currently the company faces the following main challenges:
+## Challenges
+Currently, the company faces the following main challenges:
 ### 1. Vehicle Availability & Demand Forecasting
 
 Customers often complain that **vehicles aren’t available where and when they need them**.
@@ -149,21 +158,23 @@ Questions to solve:
   * Can we incentivize loyalty through dynamic pricing, discounts, or rewards?
 
 
-# Key Objective
-“How might we **adopt Generative AI and predictive ML** to:
+## Key Objective
+How might we **adopt Generative AI and predictive ML** to:
 
 * Improve fleet availability and reliability,
 * Increase usage of available stock,
 * Increase customer loyalty,
 
 
-# Business Constraints
+## Business Constraints
 * **Mandatory Parking Spots**: All rentals end at designated bays; cars/vans must be plugged in.
 * **Multi-language & GDPR Compliance**: All solutions must respect EU data laws and support multiple languages.
 
 * **Cost-effectiveness** of deploying AI and predictive services without overburdening operating expenses.
 
-# Solution
+## Solutions
+
+In this section, we outline the proposed architecture and solutions to address the challenges faced by MobilityCorp.
 
 ## Scooter and Bike Rescheduling
 This section describes an **ML-driven approach to optimally reroute and reschedule scooters and bikes** so that vehicles are available where and when customers need them. The solution combines **demand forecasting, supply flow prediction, and optimization models** to guide both nightly bulk rebalancing and continuous daytime adjustments.  
@@ -264,7 +275,7 @@ We maintain architecture diagrams for the three core ML and optimization compone
 
 
 
-## MobilityCorp — Agentic Trip Planner Architecture (v1)
+## MobilityCorp — Agentic Trip Planner Architecture
 
 ### 1. Goal
 
