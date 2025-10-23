@@ -351,7 +351,7 @@ For further details and rationale behind each decision, see the linked ADRs.
 
 Design an **Agentic AI** that assists MobilityCorp users in planning their **daily, weekly, or monthly trips**.
 
-## Key Functions
+#### Key Functions
 - Plans travel based on:
     - User schedules
     - Available vehicles
