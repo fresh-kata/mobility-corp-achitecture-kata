@@ -57,6 +57,4 @@ In the context of planning rebalancing and relocation operations, facing the nee
 * Maintain feature contracts to ensure consistent input data from booking and external APIs.
 
 # COMMENTS
-
 * ARIMAX chosen as a baseline; future ADR may supersede this with a more advanced demand forecasting approach.
-* This ADR links directly to **Nightly Reset ADR** and **Residual Optimization ADR**, as both depend on accurate demand predictions.

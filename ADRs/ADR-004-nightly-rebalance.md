@@ -1,7 +1,7 @@
 # Nightly Rebalance
 
 **Author**: Marlon Ehrich<br />
-**Status**: PROPOSED<br />
+**Status**: ACCEPTED<br />
 **Type**: PROCESS<br />
 **Created**: 2025-10-19<br />
 **Post-history**:  
@@ -42,14 +42,6 @@ Together, these forecasts define **target stock distributions** per zone at 06:0
 
 * Track 06:00 zone fill levels vs. forecast targets.  
 * Monitor demand satisfaction rate (attempted vs. served bookings) during 06:00–09:00.  
-* Compare actual vs. forecast supply shifts to evaluate model accuracy.  
-* Adjust nightly target distributions based on deviations observed in realized flows.  
+* Compare actual vs. forecast supply shifts to evaluate model accuracy.
 
 # COMMENTS
-
-* This ADR complements the **Rolling Horizon ADR**, which governs daytime optimization.  
-* The nightly reset aligns with practices in large bike- and scooter-sharing systems worldwide.  
-
-# TODO
-
-* Add a diagram to illustrate the nightly rebalance process.
