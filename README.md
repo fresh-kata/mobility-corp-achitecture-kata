@@ -25,31 +25,20 @@
         - [Execution Loop](#execution-loop)
         - [Architecture Diagrams](#architecture-diagrams)
     - [2: MobilityCorp — Agentic Trip Planner Architecture](#mobilitycorp--agentic-trip-planner-architecture)
-        - [1. Goal](#1-goal)
-        - [2. Why We Need an Agentic AI](#2-why-we-need-an-agentic-ai)
+        - [Goal](#goal)
+        - [Why We Need an Agentic AI](why-we-need-an-agentic-ai)
             - [Problem Statement](#problem-statement)
             - [Why an Agentic AI](#why-an-agentic-ai)
-        - [3. What the Agent Does](#3-what-the-agent-does)
-        - [4. Example Workflow](#4-example-workflow)
-        - [5. MCP Servers](#5-mcp-servers)
-            - [Why MCP Servers?](#why-mcp-servers)
-            - [Useful MCP Servers for Trip Planning](#useful-mcp-servers-for-trip-planning)
-        - [6. Key Components](#6-key-components)
-        - [7. Data and Privacy](#7-data-and-privacy)
-        - [8. Example MCP Context (Prompt)](#8-example-mcp-context-prompt)
-        - [9. Evaluation Metrics](#9-evaluation-metrics)
-        - [10. Generative AI Models (LLM) Deployment](#10-generative-ai-models-llm-deployment)
+        - [What the Agent Does](what-the-agent-does)
+        - [MCP Servers](#mcp-servers)
+        - [Data and Privacy](data-and-privacy)
+        - [Evaluation Metrics](#evaluation-metrics)
+        - [Generative AI Models (LLM) Deployment](generative-ai-models-llm-deployment)
             - [Deployment Strategy](#deployment-strategy)
             - [LLM Selection](#llm-selection)
-                - [Context](#context-1)
-                - [Decision](#decision)
             - [Hardware Requirements and Costs](#hardware-requirements-and-costs)
-                - [Context](#context-2)
-                - [Decision](#decision-1)
-                - [Hardware and Cost Breakdown (Estimated, 2025)](#hardware-and-cost-breakdown-estimated-2025)
-                - [Summary of Benefits](#summary-of-benefits)
-        - [11. Planning Evaluation Strategy](#11-planning-evaluation-strategy)
-        - [12. AI Agent Trip Planning Evaluator](#12-ai-agent-trip-planning-evaluator)
+        - [Planning Evaluation Strategy](#planning-evaluation-strategy)
+        - [AI Agent Trip Planning Evaluator](#ai-agent-trip-planning-evaluator)
         - [Diagrams](#diagrams)
             - [Component Based Thinking](#component-based-thinking)
             - [Deployment Architecture](#deployment-architecture)
@@ -282,46 +271,47 @@ We maintain architecture diagrams for the three core ML and optimization compone
 
 ## MobilityCorp — Agentic Trip Planner Architecture
 
-### 1. Goal
+### Goal
 
-The goal is to design an **Agentic AI** that helps MobilityCorp users plan their daily (or weekly, monthly) trips.  
-This agent plans travel for users based on their schedule, available vehicles, and other useful data sources.  
-It ensures that the right vehicle is in the right place at the right time and sends demand signals to suppliers.
-If there is no vehicle available, it can send request to the supply team to rebalance vehicles proactively.
+Design an **Agentic AI** that assists MobilityCorp users in planning their **daily, weekly, or monthly trips**.
+
+## Key Functions
+- Plans travel based on:
+    - User schedules
+    - Available vehicles
+    - Other relevant data sources
+- Ensures the **right vehicle is available at the right place and time**
+- Sends **demand signals** to suppliers when needed
+- If no vehicle is available, it **requests the supply team** to rebalance vehicles proactively
 
 ---
 
-### 2. Why We Need an Agentic AI
+### Why We Need an Agentic AI
+Users need a smart, reliable way to plan trips with MobilityCorp vehicles — knowing:
+* 
+* When to leave to arrive on time
+* Which vehicle to use (scooter, bike, car)
+* Where to pick up and drop off
+* Trip cost and what to do if issues arise (weather, traffic, low battery)
 
-#### Problem Statement
-Users need a reliable way to plan trips using MobilityCorp vehicles. They want to know:
-* When to leave home (the place) to arrive on time.
-* Which vehicle to use (scooter, bike, car).
-* Where to pick up and drop off the vehicle.
-* How much the trip will cost.
-* What to do if something goes wrong (e.g., bad weather, traffic, vehicle low battery).
+MobilityCorp needs to:
 
-What MobilityCorp needs:
-* Predict demand for vehicles at specific locations and times.
-* Send supply requests to rebalance vehicles before shortages occur.
-* Ensure compliance with local laws and regulations.
-* Optimize fleet usage and reduce operational costs.
+* Predict vehicle demand by location and time
+* Rebalance supply before shortages
+* Ensure legal compliance
+* Optimize fleet use and cut operational costs
 
 #### Why an Agentic AI
-
 See ADR: [ADR-021: Why do we need Agentic AI?](ADRs/ADR-021-need-for-agentic-ai.md)
-
-Planning trips is a complex task, and it needs to consider many dynamic factors:
-* Users have varying preferences (fastest, cheapest, greenest).
-* Weather and traffic conditions change frequently.
-* Each country and city has different rules and restrictions.
-* Vehicles are often not available when or where users need them.
-* Users can’t always rely on our service for regular commutes.
-* Supply teams need better demand forecasts.
-
+Planning trips is complex and depends on dynamic factors:
+* User preferences vary (fastest, cheapest, greenest)
+* Weather and traffic change often
+* Rules differ by city and country
+* Vehicle availability is inconsistent
+* Supply teams need better demand forecasting
 ---
 
-### 3. What the Agent Does
+### What the Agent Does?
 
 * Helps users plan daily or recurring trips (like home-to-work).
 * Checks data from MCP servers: weather, local rules amd restrictions, traffic, public transport, fleet status, and user habits.
@@ -329,9 +319,7 @@ Planning trips is a complex task, and it needs to consider many dynamic factors:
 * Sends booking or supply requests when availability is low.
 * Monitors ongoing trips and re-plans when needed.
 
----
-
-### 4. Example Workflow
+**Example use cases:**
 
 1. User says: “Plan my morning trip to work at 8:00.”
 2. Agent collects data from MCP servers (weather, public transport, fleet, parking, and etc).
@@ -339,60 +327,6 @@ Planning trips is a complex task, and it needs to consider many dynamic factors:
 4. Agent checks range, battery, parking, and restrictions.
 5. Agent creates soft bookings and sends a demand signal if vehicles are low.
 6. If something changes (e.g., rain or traffic), the agent re-plans automatically.
-
-
----
-
-### 5. MCP Servers
-
-#### Why MCP Servers?
-MCP Servers provide structured APIs to access real-time data and perform actions related to MobilityCorp's services.
-We do not need to build everything from scratch; instead, we leverage these existing API endpoints to gather necessary information and execute tasks.
-By using the right technology it's possible to expose the APIs as MCP Servers, which can be easily integrated with the Agentic AI.
-MCP Servers offer a modular approach, allowing the agent to interact with various services independently, ensuring scalability and maintainability.
-
-#### Useful MCP Servers for Trip Planning
-
-| MCP Server       | Purpose                                                                |
-|------------------|------------------------------------------------------------------------|
-| Fleet & Booking  | Find, book, or cancel vehicles. Check vehicle health and availability. |
-| Telemetry        | Get real-time GPS, battery, and status updates every 30 seconds.       |
-| Local Calendar   | Get local calendar of the country                                      |
-| Parking          | Find nearest legal parking bays, check capacity.                       |
-| Charging         | Monitor charger and battery swap status.                               |
-| Supply           | Get and send supply or relocation requests.                            |
-| Weather          | Retrieve forecasts, rain, temperature, wind.                           |
-| Local Events     | Check local events and disruptions.                                    |
-| Public Transport | Get public transport schedules and delays.                             |
-| Traffic          | See roadworks and traffic restrictions.                                |
-| User Context     | Access user preferences and schedules.                                 |
-| Pricing          | See tariffs, rewards, and incentives.                                  |
-| Compliance       | Check legal city limits, parking rules, and logging.                   |
-| Payments         | Manage user payments and refunds.                                      |
-| Vehicles         | Vehicles availability maps                                             |
-| Image Proof      | Validate return photos and charger connection.                         |
-
----
-
-### 6. Key Components
-
-* **Conversation Orchestrator:** Handles user chat and converts it into structured actions.
-* **Plan Engine:** Creates and scores trip plans, ensures all constraints are met.
-* **Risk & Forecast Module:** Predicts demand, range, and weather impact.
-* **Action Executor:** Books vehicles, sends supply requests, and manages updates.
-* **Personalization Service:** Learns user preferences and improves future plans.
-
----
-
-### 7. Data and Privacy
-
-* Vehicle and user data are stored securely in the EU (GDPR compliant).
-* Data access follows user consent scopes.
-* All tool calls are logged for audit and traceability.
-
----
-
-### 8. Example MCP Context (Prompt)
 
 **Prompt Example:**
 
@@ -409,7 +343,30 @@ Use the following MCP tools:
 Provide: Main and backup plans, each with ETA, cost, and risk score.
 ```
 
-### 9. Evaluation Metrics
+---
+
+### MCP Servers
+
+#### Why MCP Servers?
+MCP Servers offer structured APIs that provide real-time data and enable actions within MobilityCorp’s ecosystem.  
+Instead of building new systems, the Agentic AI leverages these APIs to gather information and perform tasks efficiently.  
+Their modular design allows seamless integration, ensuring scalability, flexibility, and easy maintenance.
+
+#### Useful MCP Servers for Trip Planning
+MCP Servers provide essential data and functionality for trip planning, covering all aspects of MobilityCorp’s ecosystem. 
+They manage vehicle booking, telemetry, parking, charging, and supply operations while integrating real-time 
+inputs like weather, traffic, public transport, and local events. Additional services handle pricing, compliance, payments, 
+and user context, ensuring the Agentic AI can plan, monitor, and optimize trips efficiently.
+
+---
+
+### Data and Privacy
+* Vehicle and user data are stored securely in the EU (GDPR compliant).
+* Data access follows user consent scopes.
+* All tool calls are logged for audit and traceability.
+---
+
+### Evaluation Metrics
 * **User Satisfaction:** Measure via post-trip surveys (target >85% satisfaction).
 * **On-Time Arrival Rate:** Percentage of trips arriving on time (target >90%).
 * **Demand Forecast Accuracy:** Mean Absolute Percentage Error (MAPE) of demand predictions (target <10%).
@@ -417,7 +374,7 @@ Provide: Main and backup plans, each with ETA, cost, and risk score.
 * **Compliance Rate:** Percentage of trips adhering to local regulations (target 100%).
 * **System Uptime:** Availability of the Agentic Trip Planner service (target >99.9%).
 
-### 10. Generative AI Models (LLM) Deployment
+### Generative AI Models (LLM) Deployment
 
 #### Deployment Strategy
 see ADR: [ADR-022: AI Model Deployment Strategy](ADRs/ADR-022-Gen_AI_Model_Deployment_Strategy.md)
@@ -429,38 +386,12 @@ see ADR: [ADR-022: AI Model Deployment Strategy](ADRs/ADR-022-Gen_AI_Model_Deplo
 #### LLM Selection
 see ADR: [ADR-023: LLM Selection for Agentic AI](ADRs/ADR-023-LLM_Selection_for_Agentic_AI.md)
 
-##### Context
-The team evaluated several open-source large language models (Llama 3 70B, Mixtral 8x22B, Gemma 2 27B, and DeepSeek V2)
-to power an agentic AI trip-planning system capable of multi-step reasoning, tool-calling,
-and integration with Model Context Protocol (MCP) clients.
-The goal was to identify an LLM that provides advanced reasoning for itinerary generation and decision-making,
-while supporting structured tool interactions for external APIs such as flights, hotels, and maps.
-Key selection drivers included reasoning depth, tool interoperability, scalability, and an open license suitable for commercial use.
+Llama 3 (70B) was chosen for its strong reasoning, structured tool-calling, and compatibility with MCP and RAG systems.  
+It outperformed other open-source models in multi-step planning, scalability, and licensing suitability, making it ideal for building an autonomous, intelligent trip-planning agent.
 
-##### Decision
-After evaluation, Llama 3 (70B) was selected as the preferred model for its exceptional reasoning capabilities,
-robust ecosystem, and compatibility with MCP and RAG architectures.
-Its ability to generate structured, reliable tool-calling outputs makes it ideal for orchestrating multi-step
-planning workflows and integrating with travel data sources.
-Although it requires substantial computational resources,
-its performance and open licensing provide a strong foundation for developing a scalable,
-autonomous trip-planning agent that can reason, plan, and act across complex travel scenarios.
 
 #### Hardware Requirements and Costs
 See ADR: [ADR-024: Selection of On-Premise GPU Cluster for Agentic AI Trip Planning System](ADRs/ADR-024-Selection-of-On-Premise-GPU-Cluster-for-Agentic-AI-Trip-PlanningSystem.md)
-
-##### Context
-The **Agentic AI Trip Planning System** demands sustained, high-performance computing to operate the **Llama 3 (70B)** model, which performs advanced reasoning, strategic decision-making, and MCP-based tool-calling across multiple APIs.  
-While cloud GPU services offer flexibility and scalability, their continuous costs (up to **$40–$50 per GPU-hour**) make them impractical for 24/7 reasoning workloads. Additionally, they introduce concerns around **data control and GDPR compliance**, which are critical when handling user preferences and travel data.
-
-To ensure **predictable performance, cost efficiency, and data sovereignty**, the team evaluated several infrastructure strategies — cloud-based GPUs, hybrid setups, and fully on-premise clusters. The objective was to find a configuration that delivers **consistent inference performance** for large-scale LLM workloads while keeping the **total cost of ownership (TCO)** manageable over several years.
-
-##### Decision
-After analyzing hardware, scalability, and compliance trade-offs, the team chose to deploy the **Llama 3 (70B)** model on a **dedicated on-premise GPU cluster**.  
-This cluster combines **NVIDIA A100 (80GB)** GPUs for high-performance inference with **RTX 6000 Ada (48GB)** GPUs for development, testing, and smaller models. The system is optimized with **vLLM** and **TensorRT-LLM** to enable quantization, batching, and accelerated inference throughput.
-
-The on-premise cluster ensures **low-latency**, **high-throughput** inference while maintaining **full control over data processing** and infrastructure tuning.  
-Although the initial capital expense is significant, the solution provides **long-term cost savings**, **enhanced data privacy**, and **operational autonomy**, forming a stable and secure foundation for **agentic AI reasoning** and **multi-step planning workflows**.
 
 ##### Hardware and Cost Breakdown (Estimated, 2025)
 | Component | Quantity | Description | Est. Unit Cost (USD) | Total Cost (USD) |
@@ -472,16 +403,8 @@ Although the initial capital expense is significant, the solution provides **lon
 | **Networking, Cooling, and Power Systems** | – | Cluster infrastructure and redundancy | – | $12,000          |
 | **Total Estimated Cost (One-time Investment)** | – |  |  | $145,000   |
 
-##### Summary of Benefits
-- **Performance:** Sub-second inference latency for reasoning-intensive workflows.
-- **Cost Efficiency:** Break-even within **14–16 months** versus continuous cloud GPU rental.
-- **Compliance:** Fully controlled data environment aligned with **GDPR** and internal privacy standards.
-- **Scalability:** Modular design allows easy addition of GPUs and storage for future models (e.g., Llama 4, Mistral MoE).
-- **Autonomy:** Enables in-house experimentation, fine-tuning, and continuous agentic model improvements.
 
-
-
-### 11. Planning Evaluation Strategy
+### Planning Evaluation Strategy
 To evaluate the effectiveness of the trip planning agent, the following strategy will be implemented:
 1. **A/B Testing:** Conduct A/B tests comparing the agent's trip plans with traditional planning methods to assess user satisfaction and trip efficiency.
 2. **User Feedback Collection:** Implement feedback mechanisms within the app to gather user opinions on trip plans, ease of use, and overall experience.
@@ -489,7 +412,7 @@ To evaluate the effectiveness of the trip planning agent, the following strategy
 4. **Iterative Improvements:** Use collected data to refine the planning algorithms, improve AI decision-making, and enhance user experience over time.
 5. **Regular Audits:** Conduct regular audits of the agent's decisions to ensure compliance with local regulations and company policies.
 
-### 12. AI Agent Trip Planning Evaluator
+### AI Agent Trip Planning Evaluator
 It's needed to have a dedicated AI Agent Trip Planning Evaluator that assesses the quality of trip plans generated by the Agentic Trip Planner. This evaluator will:
 * Analyze trip plans based on criteria such as efficiency, cost-effectiveness, user preferences, and compliance.
 * Provide feedback to the planning agent for continuous improvement.
@@ -514,8 +437,6 @@ There are 6 main components in the deployment architecture:
 6. **System Services API:** Internal APIs (Booking, Supply, etc) and Third-party APIs for weather, traffic, public transport, etc.
 
 ![Trip Planner Deployment Architecture](assets/Agentic_AI_Trip_Planner_Deployment.png)
-
-
 
 # Final Thoughts
 TODO
