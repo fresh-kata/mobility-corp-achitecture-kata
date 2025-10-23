@@ -275,7 +275,7 @@ We maintain architecture diagrams for the three core ML and optimization compone
 
 Design an **Agentic AI** that assists MobilityCorp users in planning their **daily, weekly, or monthly trips**.
 
-## Key Functions
+#### Key Functions
 - Plans travel based on:
     - User schedules
     - Available vehicles
