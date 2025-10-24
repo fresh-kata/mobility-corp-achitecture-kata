@@ -81,7 +81,7 @@ In this section, we outline the proposed architecture and solutions to address t
 An overview of the architecture can be found in [Architecture overview](architecture/overview.md), in which we summarize the key components and their interactions. We propose two AI-Enabled use cases as solutions to the challenges identified earlier and that might be integrated into the system.
 
 1. [Scooter and Bike Rescheduling](./architecture/scooter-and-bike-rescheduling.md)
-2. [MobilityCorp — Agentic Trip Planner Architecture](#mobilitycorp--agentic-trip-planner-architecture)
+2. [Agentic Trip Planner](./architecture/agentic-trip-planner.md)
 
 Proposed solutions where guided by the business requirements and decisions documented in [Architecture Decision Records (ADRs)](ADRs/index.md).
 
