@@ -1,71 +1,55 @@
-# MIN-COST TRANSSHIPMENT SOLVER
+# Min-Cost Transshipment Solver for Residual Vehicle Relocation
 
-Residual Optimization via Min-Cost Transshipment using Google OR-Tools
+**Author**: Mobility Architecture Team<br />
+**Status**: ACCEPTED<br />
+**Type**: TECHNOLOGY<br />
+**Created**: 2025-10-24<br />
+**Post-history**: 
 
-# STATUS
-
-ACCEPTED
+Adopt min-cost balanced transshipment solved with Google OR-Tools to compute low-cost relocation flows between surplus and deficit zones in near real time.
 
 # CONTEXT
 
-Once demand forecasts and supply-shift forecasts are combined, we obtain a **residual network** of surpluses and deficits across zones and times.
-To generate relocation plans, we need to solve an optimization problem that assigns surplus vehicles to deficit nodes at minimal cost.
-
-Options considered:
-
-* Heuristic rules (greedy relocation).
-* Full VRP (Vehicle Routing Problem).
-* Min-cost balanced transshipment with a fast network flow solver.
-
-We require:
-
-* **Polynomial-time solvability** so the optimization can be re-run every 10–15 minutes.
-* A solver that is well-tested, open source, and easy to integrate.
+Forecasted demand and supply produce residual surpluses and deficits per zone and time slice. We must periodically (10–15 min) generate efficient relocation flows. Drivers: scalability, low latency, explainability, open-source availability, and operational simplicity. Options considered: (1) Greedy heuristics (fast, low quality), (2) Full VRP (richer but heavier, harder to solve frequently), (3) Min-cost transshipment (polynomial, mature tooling).
 
 # DECISION
 
-We will model residual optimization as a **min-cost balanced transshipment problem** and solve it using **Google OR-Tools’ network flow algorithms**.
+In the context of near real-time residual vehicle relocation across zones, facing the need for scalable, explainable, low-latency optimization, we decided for modeling as a min-cost balanced transshipment problem solved with Google OR-Tools network flow algorithms and neglected simple greedy heuristics and full VRP routing, to achieve polynomial-time solvability, fast refresh cycles (every 10–15 minutes), open-source integration, transparency, and scalability, accepting the absence of explicit driver tours and a potential future need for a routing layer, because OR-Tools provides mature, efficient, free flow algorithms widely adopted in industry.
 
+Pros:
+- Fast polynomial-time solution, tractable for thousands of nodes.
+- Open source (Apache 2.0), multi-language bindings, proven reliability.
+- Transparent cost-based flows aiding audit and explanation.
 
-### What is Min-Cost Transshipment?
-
-A **transshipment problem** is a type of flow problem in a directed network where:
-
-* **Nodes** can act as suppliers, consumers, or intermediate points.
-* **Suppliers** (zones with surplus vehicles) have positive supply.
-* **Consumers** (zones with deficits) have demand.
-* **Edges** represent possible flows (truck moves), each with a **cost per unit flow** (e.g., distance, time, handling effort)
-
-The **goal** is to send flows through the network to satisfy all deficits while minimizing the total cost of flows.
-Unlike simple transportation problems, transshipment allows flows to pass through intermediate nodes, which matches real-world cases where trucks may make multiple stops.
-
-
-* Transshipment is solvable in polynomial time using successive shortest path or cycle-canceling algorithms.
-* OR-Tools provides efficient, production-ready implementations with bindings in multiple languages.
-* This balances **performance** (fast runtimes even for thousands of nodes) with **operational simplicity** (easy deployment and monitoring).
-
-**Pros**
-
-* Low computational cost, tractable at scale.
-* Open source, widely supported, and proven in logistics applications.
-* Transparent, explainable optimization results.
-
-**Cons**
-
-* Produces target flows, not explicit driver tours (may require a separate routing step if we move towards VRP).
+Cons:
+- Produces aggregate flows, not detailed driver routes.
+- Later transition to VRP may require rework and added complexity.
 
 # CONSEQUENCES
 
-* We can refresh optimization decisions in real time (every 10–15 minutes) without significant infrastructure costs.
-* If future needs demand richer routing (e.g., multiple trucks with complex time windows), we may extend the solver to OR-Tools’ VRP module.
+Positive:
+- Frequent re-optimization without high infrastructure cost.
+- Clear cost metrics for monitoring and tuning.
+- Scales with network growth.
+
+Trade-offs:
+- Need a subsequent routing/assignment step if driver-level tours become required.
+- Less expressive than full VRP (time windows, multi-stop constraints) at this stage.
+
+Future Evolution:
+- Can layer VRP or multi-period routing later using OR-Tools’ routing module if complexity increases.
 
 # COMPLIANCE
 
-* Benchmark solver performance (runtime, solution quality) against historical demand and supply scenarios.
+- Uses OR-Tools (Apache 2.0); license compatible with internal and commercial use.
+- No PII processed; optimization operates on aggregated vehicle counts and zone/time identifiers.
+- Benchmarking mandated: runtime, optimality gap (if any), and resource usage logged for audit.
+- Operational logs must follow internal data retention and security policies.
 
 # COMMENTS
 
-* OR-Tools is actively maintained by Google and used widely in industry.
-* Alternative solvers (e.g., Gurobi, CPLEX) provide similar functionality but at higher licensing cost; OR-Tools is free and sufficient for our needs.
-* This ADR may later be superseded by a VRP-specific ADR if we migrate from flow-based to route-based optimization.
+- Alternative commercial solvers (Gurobi, CPLEX) offer similar capability but introduce licensing cost; not justified presently.
+- Heuristic approach rejected due to lower solution quality and poorer scalability.
+- VRP deferred until driver-level constraints materially impact outcomes.
+- This ADR may be superseded by a routing-focused ADR if strategic needs shift from flow optimization to tour planning.
 
