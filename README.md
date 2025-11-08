@@ -22,8 +22,8 @@ A glossary of key terms and concepts used throughout the MobilityCorp Architectu
 
 ## Objectives
 
-Come up with a new architecture for MobilityCorp, incorporating AI functionality where appropriate.
-
+Define a modern, scalable architecture for MobilityCorp that integrates AI where it meaningfully improves operations and customer experience.
+A list of the criterias a solution should include can be found in the [Kata Requirements](KATA-REQUIREMENTS.md).
 
 ## Team members
 
@@ -55,19 +55,15 @@ Business requirements include vehicle booking, fleet management and operations, 
 
 ## Challenges
 MobilityCorp currently faces these main challenges in its operations and customer experience.
-### 1. Vehicle Availability & Demand Forecasting
-
-Customers often complain that **vehicles aren’t available where and when they need them**.
-
-Questions to solve:
-
+### 1. Vehicle Availability
+Customers often complain that **vehicles aren’t available where and when they need them**.  
+Questions to solve:  
   * Can we **anticipate customer demand** at specific times and locations?
   * Can we **reposition vehicles in advance**?
   * Can we **predict demand spikes** (e.g. post-work scooter rides)?
 
 ### 2. Increasing Customer Engagement
-Many users treat rentals as **ad-hoc usage** rather than **regular commuting options**.
-
+Many users treat rentals as **ad-hoc usage** rather than **regular commuting options**.  
 Questions to solve:
 
   * Can we encourage recurring bookings (e.g., daily work commutes)?
@@ -76,8 +72,7 @@ Questions to solve:
 
 ### 3. Battery & Charging Management
 The company has problems with electric vehicels running out of charge.
-Where scooters and bikes require **manual battery swaps**.
-
+Where scooters and bikes require **manual battery swaps**.  
 Questions to solve:
 
   * Can we work out how to prioritise which vehicles to switch out batteries? (for bikes and scooters)
@@ -88,27 +83,98 @@ A detailed discussion on the challenges can be found in [Business Challenges for
 
 ## AI-Enabled Opportunities
 
-- **Demand forecasting & fleet distribution**: Predicts demand to optimize vehicle availability and placement.
-- **Battery health & technician scheduling**: Monitors battery health and plans efficient technician routes.
-- **Dynamic pricing & booking suggestions**: Adjusts pricing dynamically and suggests bookings based on demand.
-- **Photo validation for vehicle return**: Automates vehicle return checks using AI vision models.
-- **Personalization & mobility assistant**: Provides personalized travel recommendations and smart assistance.
+From the challenge analysis, we identified **four AI opportunities** that could meaningfully improve MobilityCorp’s operations.  
+Each opportunity directly addresses one or more of the **three main challenges**.
 
-Details on each opportunity can be found in [AI-Enabled Use Cases for MobilityCorp](business/ai-enabled-usecases.md).
+- **Demand forecasting & fleet distribution**  
+  *Addresses:* [Challenge 1: Vehicle Availability](#1-vehicle-availability--demand-forecasting)  
+  Predicts when and where customers will need vehicles and supports proactive fleet placement.  
+  Helps ensure scooters and bikes are available during peak demand and reduces shortages.
 
+- **Personalization & mobility assistant**  
+  *Addresses:* [Challenge 2: Increasing Customer Engagement](#2-increasing-customer-engagement)  
+  Uses AI-driven recommendations and smart prompts to help riders form habits, increase recurring usage, and improve loyalty.
 
+- **Dynamic pricing & booking suggestions**  
+  *Addresses:* [Challenge 2: Increasing Customer Engagement](#2-increasing-customer-engagement)  
+  Adjusts pricing dynamically and proactively suggests rides or bookings to encourage usage, balance demand, and attract frequent users.
+
+- **Battery health & technician scheduling**  
+  *Addresses:* [Challenge 3: Battery & Charging Management](#3-battery--charging-management)  
+  Predicts battery health, prioritizes which vehicles require swapping, and optimizes technician routes to keep the fleet charged and available.
+
+Details on each opportunity can be found in  
+[AI-Enabled Use Cases for MobilityCorp](business/ai-enabled-usecases.md).
+
+Based on this mapping, we selected **two opportunities** with the strongest immediate impact to implement in the proposed architecture.
 
 
 ## Proposed solutions
 
 In this section, we outline the proposed architecture and solutions to address the challenges faced by MobilityCorp.
 
-An overview of the architecture can be found in [Architecture overview](architecture/overview.md), in which we summarize the key components and their interactions. We propose two AI-Enabled use cases as solutions to the challenges identified earlier and that might be integrated into the system.
+An overview of the architecture can be found in [Architecture overview](architecture/overview.md), in which we summarize the key components and their interactions.
+We now present two architectural solutions that integrate AI to tackle two of the three main challenges identified:
 
-1. [Scooter and Bike Rescheduling](./architecture/scooter-and-bike-rescheduling.md)
-2. [Agentic Trip Planner](./architecture/agentic-trip-planner.md)
+1. **Scooter and Bike Rescheduling**  
+   Addresses Challenge 1: [Vehicle Availability](#1.-Vehicle-Availability)  
+   Uses demand prediction, customer-driven supply flow modeling, and optimization to ensure vehicles are where customers need them.  
+   → See: [Scooter and Bike Rescheduling](./architecture/scooter-and-bike-rescheduling.md)
+
+2. **Agentic Trip Planner**  
+   Addresses Challenge 2: [Increasing Customer Engagement](#2.-Increasing-Customer-Engagement)  
+   Uses AI-driven personalization, multi-modal trip planning, and assistant-style interaction to encourage recurring usage.  
+   → See: [Agentic Trip Planner](./architecture/agentic-trip-planner.md)
 
 Proposed solutions where guided by the business requirements and decisions documented in [Architecture Decision Records (ADRs)](ADRs/index.md).
+
+These solutions do not solve every challenge but intentionally focus on areas with the highest business impact and strongest alignment with MobilityCorp’s short-term goals (fleet utilization and improved customer experience).
+
+
+## Solution Impact
+
+By implementing these two AI-driven solutions, MobilityCorp directly improves the two areas with the highest business impact: **continuous availability** and **customer experience**.
+
+### 1. Ensuring Continuous Vehicle Availability
+
+**Scooter and Bike Rescheduling** directly improves the reliability of the fleet by:
+
+- Forecasting demand per zone and time window  
+- Predicting how customers naturally move vehicles  
+- Highlighting upcoming deficits before they occur  
+- Optimizing truck routes to correct imbalances in advance  
+
+The outcome is a system where **customer demand is met consistently**, reducing frustration and preventing customers from switching to competitors when a vehicle isn’t available.
+
+A single bad experience — opening the app to find “No scooters nearby” — can permanently push a user toward a competing service.  
+Avoiding this moment is the core reason why this solution is strategically important.
+
+Satisfied users are more likely to:
+
+- Rent more often  
+- Recommend the service to friends  
+- Treat scooters and bikes as part of their daily commute  
+
+This directly increases MobilityCorp’s **revenue, retention rate, and brand reach**.
+
+### 2. Improving User Experience and Engagement
+
+The **Agentic Trip Planner** improves how customers interact with MobilityCorp every day:
+
+- Helps riders plan daily or recurring trips  
+- Suggests optimal vehicles and routes  
+- Reacts to real-time conditions (weather, traffic, availability)  
+- Sends soft bookings or demand signals to ensure a vehicle will be ready  
+
+Instead of reacting to demand, the system **shapes and stabilizes demand** by giving users a dependable, personalized mobility assistant.
+
+A commuter who gets a daily “Your scooter for the 8:00 trip is reserved and ready” notification is far more likely to adopt MobilityCorp as part of their routine and stay loyal long-term.
+
+Better user experience leads to:
+
+- Higher repeat usage  
+- Stronger brand loyalty  
+- More predictable demand (which also helps rescheduling accuracy)
 
 
 # Final Thoughts

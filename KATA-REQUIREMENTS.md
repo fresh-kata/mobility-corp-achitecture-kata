@@ -1,11 +1,11 @@
-## Deliverables and Evaluation
+Define a modern, scalable architecture for MobilityCorp that integrates AI where it meaningfully improves operations and customer experience.
 
 ### Expected Deliverables
 
 - **Overview**: Narrative on how AI addresses business challenges.  
 - **Diagrams**: Detailed visuals of AI integration.  
 - **ADRs**: Architectural decisions with trade-off analysis.  
-- **Optional**: Implementation details or a 5-minute presentation.  
+- **Presenation**: Record a 5-minute presentation.  
 
 ### Judges' Criteria
 
@@ -14,11 +14,3 @@
 - Handling AI-related uncertainties.  
 - Alignment with existing architecture.  
 - Effective validation of AI results.  
-
----
-
-
-- **Dynamic Pricing**: Encourage off-peak usage and optimize revenue.  
-
-- **Proactive Notifications**: Alert users about battery range, upcoming bookings, or alternative options.  
-
