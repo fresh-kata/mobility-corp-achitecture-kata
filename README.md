@@ -35,10 +35,11 @@ Come up with a new architecture for MobilityCorp, incorporating AI functionality
 
 
 ## Context
+MobilityCorp provides short-term rentals for last-mile transport.
+The company operates a flexible, location-based rental service for electric scooters, eBikes, cars, and vans, where customers rent vehicles via a **mobile app** or a web platform.
+The business model centers on convenient, app-driven bookings, real-time vehicle tracking, and efficient fleet management. More details on the business model can be found in [MobilityCorp Business Model](business/business-model.md).
 
-MobilityCorp operates a flexible, location-based rental service for electric scooters, eBikes, cars, and vans. The business model centers on convenient, app-driven bookings, real-time vehicle tracking, and efficient fleet management. More details on the business model can be found in [MobilityCorp Business Model](business/business-model.md).
-
-Vehicles are tracked, unlocked, and managed via a **mobile app** (with occasional web portal access). All vehicles are GPS-enabled, remotely controllable, and integrated into MobilityCorp’s operational system.
+Vehicles are tracked, unlocked, and managed via the mobile app (with occasional web portal access). All vehicles are GPS-enabled, remotely controllable, and integrated into MobilityCorp’s operational system.
 
 The company’s **business model** is based on:
 
@@ -52,7 +53,40 @@ The fleet is currently **fixed per country**, but the company has plans to scale
 Business requirements include vehicle booking, fleet management and operations, return and feedback processes. These requirements are detailed in [Business Requirements](business/requirements.md) and were used to guide system architecture decisions.
 
 
-### AI-Enabled Opportunities
+## Challenges
+MobilityCorp currently faces these main challenges in its operations and customer experience.
+### 1. Vehicle Availability & Demand Forecasting
+
+Customers often complain that **vehicles aren’t available where and when they need them**.
+
+Questions to solve:
+
+  * Can we **anticipate customer demand** at specific times and locations?
+  * Can we **reposition vehicles in advance**?
+  * Can we **predict demand spikes** (e.g. post-work scooter rides)?
+
+### 2. Increasing Customer Engagement
+Many users treat rentals as **ad-hoc usage** rather than **regular commuting options**.
+
+Questions to solve:
+
+  * Can we encourage recurring bookings (e.g., daily work commutes)?
+  * Can we **suggest bookings proactively** based on user history?
+  * Can we incentivize loyalty through dynamic pricing, discounts, or rewards?
+
+### 3. Battery & Charging Management
+The company has problems with electric vehicels running out of charge.
+Where scooters and bikes require **manual battery swaps**.
+
+Questions to solve:
+
+  * Can we work out how to prioritise which vehicles to switch out batteries? (for bikes and scooters)
+  * Can we find optimal routes for battery swapping?
+
+A detailed discussion on the challenges can be found in [Business Challenges for MobilityCorp](business/business-challenges.md).
+
+
+## AI-Enabled Opportunities
 
 - **Demand forecasting & fleet distribution**: Predicts demand to optimize vehicle availability and placement.
 - **Battery health & technician scheduling**: Monitors battery health and plans efficient technician routes.
@@ -63,15 +97,6 @@ Business requirements include vehicle booking, fleet management and operations, 
 Details on each opportunity can be found in [AI-Enabled Use Cases for MobilityCorp](business/ai-enabled-usecases.md).
 
 
-## Challenges
-
-MobilityCorp faces these main challenges in its operations and customer experience.
-
-1. Demand-supply mismatch (vehicles misplaced vs real-time need).
-2. Battery servicing inefficiency (suboptimal swap/charge sequencing).
-3. Low customer lifecycle engagement (mostly one-off rides).
-
-A detailed discussion on the challenges can be found in [Business Challenges for MobilityCorp](business/business-challenges.md).
 
 
 ## Proposed solutions
