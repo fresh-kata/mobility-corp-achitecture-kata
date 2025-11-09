@@ -63,7 +63,6 @@ The **demand forecast** tells us *what customers want* — the attempted booking
 
 This forecast provides the baseline demand curve we must satisfy in both the **nightly reset** and the **daytime optimization**.
 
-![Demand Forecast Model](./images/demand_forecast.png)
 See [ADR-010-demand-forecast-model](../ADRs/ADR-010-demand-forecast-model.md).
 
 
@@ -83,7 +82,7 @@ This model is essential because it prevents us from overestimating deficits or s
 
 ### 3. Residual Network Optimizer
 
-The **residual optimizer** is where we bring together the **demand forecast** and the **supply-shift model** to see the *real imbalances* that customers will experience if nothing is done.  
+The **residual optimizer** is where we bring together the **demand forecast** and the **supply-shift model** to see the *real imbalances* that customers will experience if nothing is done. 
 
 Think of it step by step:
 1. **Demand forecast** tells us:  
@@ -122,6 +121,14 @@ Once surpluses and deficits are identified:
 
 This ensures trucks are only dispatched to fix **residual gaps** that natural flows cannot cover.
 
+### Visualization
+The following images visualizes the prediction and optimization process:
+![Scooter_Bike_Example](./images/scooter_bike_rescheduling.png)
+
+
+## Architecture
+The following C2 diagram shows a possible architecture:
+![Scooter_Bike_Architecture](./images/scooter_bike_architecture.png)
 
 ## Execution Loop
 
