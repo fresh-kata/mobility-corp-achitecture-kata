@@ -2,18 +2,20 @@
 
 
 ## Table of Contents
-
+- [Video Presentation](#video-presentation)
 - [Glossary](#glossary)
 - [Objectives](#objectives)
 - [Team members](#team-members)
 - [Context](#context)
-- [AI-Enabled Opportunities](#ai-enabled-opportunities)
 - [Challenges](#challenges)
-- [Key Objective](#key-objective)
-- [Business Constraints](#business-constraints)
-- [Solutions](#solutions)
+- [AI-Enabled Opportunities](#ai-enabled-pportunities)
+- [Proposed Solutions](#proposed-solutions)
+- [Solution Impact](#solution-impact)
 - [Final Thoughts](#final-thoughts)
 
+## Video Presentation
+
+__[5 Minute Video Explanation](https://youtu.be/m_xC4CIPiGc)__
 
 ## Glossary
 
@@ -31,9 +33,7 @@ A list of the criterias a solution should include can be found in the [Kata Requ
 * [Marlon Ehrich](https://www.linkedin.com/in/marlon-orlin-ehrich-0b5718247/)
 * [Sebastian Krieger](https://www.linkedin.com/in/regeirknaitsabes/)
 
-## Video Presentation
 
-__[5 Minute Video Explanation](https://youtu.be/m_xC4CIPiGc)__
 
 ## Context
 MobilityCorp provides short-term rentals for last-mile transport.
