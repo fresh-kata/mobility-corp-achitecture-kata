@@ -136,7 +136,7 @@ These solutions do not solve every challenge but intentionally focus on areas wi
 By implementing these two AI-driven solutions, MobilityCorp directly improves the two areas with the highest business impact: **continuous availability** and **customer experience**.
 
 ### 1. Ensuring Continuous Vehicle Availability
-
+→ See: [Scooter and Bike Rescheduling](./architecture/scooter-and-bike-rescheduling.md)  
 **Scooter and Bike Rescheduling** directly improves the reliability of the fleet by:
 
 - Forecasting demand per zone and time window  
@@ -158,7 +158,7 @@ Satisfied users are more likely to:
 This directly increases MobilityCorp’s **revenue, retention rate, and brand reach**.
 
 ### 2. Improving User Experience and Engagement
-
+→ See: [Agentic Trip Planner](./architecture/agentic-trip-planner.md)
 The **Agentic Trip Planner** improves how customers interact with MobilityCorp every day:
 
 - Helps riders plan daily or recurring trips  
