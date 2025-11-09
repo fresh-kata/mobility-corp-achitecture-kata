@@ -121,10 +121,10 @@ We now present two architectural solutions that integrate AI to tackle two of th
    Uses demand prediction, customer-driven supply flow modeling, and optimization to ensure vehicles are where customers need them.  
    → See: [Scooter and Bike Rescheduling](./architecture/scooter-and-bike-rescheduling.md)
 
-2. **Agentic Trip Planner**  
+2. **Agentic AI Trip Planner**  
    Addresses Challenge 2: [Increasing Customer Engagement](#2.-Increasing-Customer-Engagement)  
    Uses AI-driven personalization, multi-modal trip planning, and assistant-style interaction to encourage recurring usage.  
-   → See: [Agentic Trip Planner](./architecture/agentic-trip-planner.md)
+   → See: [Agentic AI Trip Planner](./architecture/agentic-trip-planner.md)
 
 Proposed solutions where guided by the business requirements and decisions documented in [Architecture Decision Records (ADRs)](ADRs/index.md).
 
@@ -160,10 +160,10 @@ Satisfied users are more likely to:
 This directly increases MobilityCorp’s **revenue, retention rate, and brand reach**.
 
 ### 2. Improving User Experience and Engagement
-→ See: [Agentic Trip Planner](./architecture/agentic-trip-planner.md)
+→ See: [Agentic AI Trip Planner](./architecture/agentic-trip-planner.md)
 
 
-The **Agentic Trip Planner** improves how customers interact with MobilityCorp every day:
+The **Agentic AI Trip Planner** improves how customers interact with MobilityCorp every day:
 
 - Helps riders plan daily or recurring trips  
 - Suggests optimal vehicles and routes  
