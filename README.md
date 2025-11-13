@@ -32,6 +32,8 @@ A list of the criterias a solution should include can be found in the [Kata Requ
 * [Bahram Jahanshahi](https://www.linkedin.com/in/bahram-jahanshahi/)
 * [Marlon Ehrich](https://www.linkedin.com/in/marlon-orlin-ehrich-0b5718247/)
 * [Sebastian Krieger](https://www.linkedin.com/in/regeirknaitsabes/)
+* [Camilo Gaviria](https://www.linkedin.com/in/juan-camilo-gaviria-holgu%C3%ADn-15a90461/)
+* [Supreet Singh](https://www.linkedin.com/in/supreetsingh87/)
 
 
 
